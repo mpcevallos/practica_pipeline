@@ -3,7 +3,7 @@ agent any
 stages {
     stage('Checkout') {
         steps {
-            git branch: 'main', credentialsId: 'git-threepoints-github', url: 'https://github.com/mpcevallos/practica_pipeline'
+            git branch: 'master', credentialsId: 'git-threepoints-github', url: 'https://github.com/mpcevallos/practica_pipeline'
         }
     }
 
