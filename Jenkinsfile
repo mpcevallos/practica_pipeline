@@ -12,7 +12,7 @@ stages {
     stage('Pruebas de SAST') {
         steps {
             script {
-                def scannerHome = tool 'Sonar Scanner'
+                def scannerHome = tool 'sonar-scanner'
                 withSonarQubeEnv(credentialsId:'sonar-token') {
                     sh """
                         ${scannerHome}/bin/sonar-scanner \
