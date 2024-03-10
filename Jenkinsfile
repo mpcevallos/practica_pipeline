@@ -1,3 +1,5 @@
+pipeline {
+
 agent any
 
 stages {
@@ -11,7 +13,7 @@ stages {
         steps {
             script {
                 def scannerHome = tool 'Sonar Scanner'
-                withSonarQubeEnv(credentialsId:'token') {
+                withSonarQubeEnv(credentialsId:'sonar-token') {
                     sh """
                         ${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=sonarqube \
@@ -41,4 +43,5 @@ post {
     failure {
         echo 'Pipeline fallido'
     }
+}
 }
